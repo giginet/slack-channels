@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Channel(models.Model):
-    channel_id = models.CharField(_('ID'), max_length=16)
+    channel_id = models.CharField(_('ID'), max_length=16, unique=True)
     name = models.CharField(_('Name'), max_length=64)
     created_at = models.DateField(_('Created at'))
     is_archived = models.BooleanField(_('Is archived'), default=False)
