@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
+from slack_channel.channels.models import Channel
 
-# Create your views here.
+
+class ChannelListView(ListView):
+    model = Channel

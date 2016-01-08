@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from slack_channel.channels.views import ChannelListView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^channels/list', ChannelListView.as_view()),
 ]
