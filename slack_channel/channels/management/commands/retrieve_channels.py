@@ -36,8 +36,8 @@ class Command(BaseCommand):
                         'created_at': datetime.fromtimestamp(obj['created']),
                         'is_archived': obj['is_archived'],
                         'num_members': obj['num_members'],
-                        'topic': obj['topic'],
-                        'purpose': obj['purpose']
+                        'topic': obj['topic']['value'],
+                        'purpose': obj['purpose']['value']
                 })
                 if created:
                     self.stdout.write("Created {}".format(channel.name))
